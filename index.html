@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taichung Traffic Accident Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Taichung Traffic Accident Dashboard (2022-2026)</h1>
+            <p>Interactive dashboard visualizing traffic accident trends. (Simulated data based on Taichung Open Data)</p>
+        </header>
+        
+        <aside class="filters">
+            <div class="filter-group">
+                <label for="yearFilter">Select Year:</label>
+                <select id="yearFilter">
+                    <option value="all">All Years (2022-2026)</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="categoryFilter">Select Category:</label>
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="A1">A1 (Fatal)</option>
+                    <option value="A2">A2 (Injury)</option>
+                    <option value="A3">A3 (Property Damage)</option>
+                </select>
+            </div>
+        </aside>
+        
+        <main class="dashboard">
+            <div class="kpi-cards">
+                <div class="card">
+                    <h3>Total Accidents</h3>
+                    <p id="totalAccidents">0</p>
+                </div>
+                <div class="card">
+                    <h3>A1 Fatalities</h3>
+                    <p id="totalFatalities">0</p>
+                </div>
+                <div class="card">
+                    <h3>A2 Injuries</h3>
+                    <p id="totalInjuries">0</p>
+                </div>
+            </div>
+
+            <div class="charts">
+                <div class="chart-container">
+                    <h2>Accident Trend</h2>
+                    <canvas id="trendChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h2>Accidents by Category</h2>
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
